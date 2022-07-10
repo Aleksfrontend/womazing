@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOMAZING 2.0</title>
+
+    <meta name="theme-color" content="#6E9C9F">
+    <meta name="description" content="Модная женская одежда беспрецендетного качества">
+	<meta name="keyworlds" content="одежда, мода, модный, женская, качество, стиль, стильный, собственное производство, womazing, moda, clothing, fashion, trendy, women's, quality, style, stylish, own production">
+
+	 <!-- Favicon -->
+	<link rel="apple-touch-icon" href="img/favicon_womazing_ati.png">
+	<link rel="shortcut icon" href="img/favicon_womazing.png"  type="image/x-icon">
+
+	<!-- OG Tags -->
+	<meta property="og:title" content="WOMAZING 2.0">
+	<meta property="og:description" content="одежда, мода, модный, женская, качество, стиль, стильный, собственное производство, womazing, moda, clothing, fashion, trendy, women's, quality, style, stylish, own production">
+	<meta property="og:type" content="article">
+	<meta property="og:image" content="img/first_screen_og.jpg">
+	<meta property="og:site_name" content="WOMAZING 2.0">
+
+	<!-- Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">   
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>    
+    <header id="header" class="header header-index">
+        <div class="header-fix">
+            <div class="container ">
+                <div class="row align-items-center header_bg">
+                    <div class="col-6 col-lg-2">
+                        <a href="index.html" class="logo"><img src="img/Лого.svg" alt="WOMAZING" class="header-logo"></a>
+                    </div>
+                    <div class="d-none d-lg-block col-lg-6 col-xl-5 offset-xl-1">
+                        <nav class="menu">
+                            <ul class="menu__list d-flex">
+                                <li class="menu__item">
+                                    <a href="index.html" class="header-text menu__link active-menu">
+                                        Главная
+                                    </a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="shop.html" class="header-text menu__link">
+                                        Магазин
+                                    </a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="about.html" class="header-text menu__link">
+                                        О бренде
+                                    </a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="contacts.html" class="header-text menu__link">
+                                        Контакты
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-2 offset-1 d-none col-lg-3 offset-lg-0  d-lg-flex">
+                        <button type="button" id="tel-icon" class="tel-icon"></button>
+                        <div id="tel-wrapper" class="tel-wrapper d-none">  <!--  Попап -->
+                            <div id="overlay"></div>
+                            <div id="modal-window" class="modal-window">
+                                <img src="img/close.png" alt="Close" id="closed-modal" class="closed-modal">
+                                <h3 class="title-h3 title-h3__modal text-center">
+                                    Заказать обратный звонок
+                                </h3>                              
+                                <form action="#" method="POST" id="form-modal-order" class="form-modal-order">
+                                    <input type="text" class="modal-form__input name-form field" name="name" placeholder="Имя" required>
+                                    <input type="text" class="modal-form__input mail-form field" name="email" placeholder="E-mail" required>
+                                    <input type="text" class="modal-form__input tel-form field" name="tel" placeholder="Телефон" required>
+                                    <button type="sabmit" id="modal-tel" class="btn btn__turquoise btn__turquoise_modal modal-tel">
+                                        Заказать звонок
+                                    </button>
+                                </form> 
+                            </div>
+                            <div id="modal-thank" class="modal-window modal-window_thanks text-center d-none">
+                                <h3 class="title-h3 title-h3__modal text-center">
+                                    Отлично! Мы скоро вам перезвоним.
+                                </h3>
+                                <button type="button" id="closed-thank" class="btn btn__white btn__white_modal d-inline-block ">
+                                    Закрыть
+                                </button>
+                            </div>
+                        </div> 
+                        <a href="tel:+74958235412" class="header-text tel align-items-center">
+                            +7 (495) 823-54-12
+                        </a>
+                    </div>
+                    <div class="col-2 offset-2 col-sm-2 offset-sm-3 col-md-1 offset-md-4 offset-lg-0 d-flex justify-content-end ">
+                        <a href="cart.html" class="d-block ml-auto  position-relative">
+                            <img src="img/shopping_bags.png" alt="Корзина" class="cart mr-auto">
+                            <span class="cart-namb d-none position-absolute">3</span>
+                        </a>
+                    </div>
+                    <div id="hamburger" class="col-2 col-sm-1 d-flex justify-content-end d-lg-none hamburger">
+                        <button type="button" id="burger" class="burger d-lg-none" ></button>                        
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="burger-menu" class="burger-menu d-none">
+                                <div id="overlay-burg" ></div>
+                                <ul class="nav-burg">
+                                    <li class="nav-burg-item">
+                                        <a class="header-text nav-burg-link active-menu" href="index.html">Главная</a>
+                                    </li>
+                                    <li class="nav-burg-item">
+                                        <a class="header-text nav-burg-link" href="shop.html">Магазин</a>
+                                    </li>
+                                    <li class="nav-burg-item">
+                                        <a class="header-text nav-burg-link" href="about.html"> О бренде</a>
+                                    </li>
+                                    <li class="nav-burg-item">
+                                        <a class="header-text nav-burg-link" href="contacts.html">Контакты</a>
+                                    </li>
+                                    <li class="nav-burg-item nav-burg-item_but-tel">
+                                        <button type="button" id="tel-icon-burg" class="tel-icon-burg"></button>
+                                    <a href="tel:+74958235412" class="header-text tel align-items-center">
+                                        +7 (495) 823-54-12
+                                    </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="offer-section" class="offer-section offer-section_bg">
+            <div class="container">
+                <div class="row ">               
+                    <div class="offer d-flex align-items-center">
+                        <div class="col-md-12 col-lg-6 col-xl-7 ">
+                            <div id="slideOfferTextIndicators" class="slideOfferTextIndicators">
+                                <div class="slide-shoow swiper-container-text">
+                                    <div class="slide-wrapper slide-offer-text">
+                                        <div class="slide-offer-text__item">
+                                            <h1 class="title-h1 title-h1__offer">
+                                                Новые поступления в этом сезоне
+                                            </h1>
+                                            <p class="large-text offer__text">
+                                                Утонченные сочетания и бархатные оттенки - вот то, что вы искали в этом сезоне. Время исследовать.
+                                            </p>
+                                        </div>
+                                        <div class="slide-offer-text__item d-none">
+                                            <h1 class="title-h1 title-h1__offer">
+                                                Что-то новенькое. Мы заждались тебя.
+                                            </h1>
+                                            <p class="large-text offer__text">
+                                                Надоело искать себя в сером городе? Настало время новых идей, свежих красок и вдохновения с Womazing!
+                                            </p>
+                                        </div>
+                                        <div class="slide-offer-text__item d-none">
+                                            <h1 class="title-h1 title-h1__offer">
+                                                Включай новый сезон с WOMAZING
+                                            </h1>
+                                            <p class="large-text offer__text">
+                                                Мы обновили ассортимент - легендарные коллекции и новинки от отечественных дизайнеров
+                                            </p>
+                                        </div> 
+                                        <div class="offer-button d-flex">
+                                            <a href="#collection" class="arrow-down">
+                                                <img src="img/arrow-down.png" class="  arrow-down__img" alt="to section">
+                                            </a>
+                                            <a href="shop.html" class="btn btn__turquoise btn__turquoise_offer">
+                                                Открыть магазин
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex position-absolute slide-point">
+                                    <button type="button" data-bs-target="#slideOfferTextIndicators" data-bs-slide-to="0" class="point active-offer-point" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#slideOfferTextIndicators" data-bs-slide-to="1" class="point" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#slideOfferTextIndicators" data-bs-slide-to="2" class="point" aria-label="Slide 3"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 offset-lg-0 col-xl-5 d-flex justify-content-end position-relative">
+                              <div class="slide-offer-shoow img-offer ">
+                                <div class="image-offer-wrapper d-flex ">
+                                    <div class="img-offer-slide img-offer-slide__item1">
+                                    </div>
+                                    <div class="img-offer-slide img-offer-slide__item2  d-none">
+                                    </div>
+                                    <div class="img-offer-slide img-offer-slide__item3 d-none">
+                                    </div>
+                                </div>
+                            </div>
+                              <img src="img/offer-seconndary__top.jpg" alt="" class="seconndary-top position-absolute">
+                              <img src="img/offer-seconndary__down.jpg" alt="" class="seconndary-down position-absolute">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="collection" class="collection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                       <h2 class="title-h2 title-h2__collection">
+                            Новая коллекция
+                        </h2>  
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">                   
+                        <div class="card-coll">
+                            <a href="one_item.html" class="card-coll__link ">
+                                <div class="card-coll__item">
+                                    <img src="img/card-collection__one.jpg" alt="Футболка USA" class="card-coll__img w-100">
+                                </div>
+                                <h4 class="title-h4 title-h4__card text-center">
+                                    Футболка USA
+                                </h4>
+                                <div class="priceInCard-text priceInCard-text__price text-center">
+                                    <p class="priceInCard-text__price_old d-inline-block">
+                                        $229
+                                    </p>
+                                    <p class="priceInCard-text__price_relevant d-inline-block">
+                                        $129
+                                    </p> 
+                                </div>                                                                
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">                   
+                        <div class="card-coll">
+                            <a href="one_item.html" class="card-coll__link ">
+                                <div class="card-coll__item">
+                                    <img src="img/card-collection__two.jpg" alt="Купальник Glow" class="card-coll__img w-100">
+                                </div>
+                                <h4 class="title-h4 title-h4__card text-center">
+                                    Купальник Glow
+                                </h4>
+                                <div class="priceInCard-text priceInCard-text__price text-center">
+                                    <p class="priceInCard-text__price_old d-inline-block d-none">
+                                        $229
+                                    </p>
+                                    <p class="priceInCard-text__price_relevant d-inline-block">
+                                        $129
+                                    </p> 
+                                </div>                                                         
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">                   
+                        <div class="card-coll">
+                            <a href="one_item.html" class="card-coll__link ">
+                                <div class="card-coll__item">
+                                    <img src="img/card-collection__three.jpg" alt="Свитшот Sweet Shot" class="card-coll__img w-100">
+                                </div>
+                                <h4 class="title-h4 title-h4__card text-center">
+                                    Свитшот Sweet Shot
+                                </h4>
+                                <div class="priceInCard-text priceInCard-text__price text-center">
+                                    <p class="priceInCard-text__price_old d-inline-block d-none">
+                                        $229
+                                    </p>
+                                    <p class="priceInCard-text__price_relevant d-inline-block">
+                                        $129
+                                    </p> 
+                                </div>                                                         
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <a href="#" class="btn btn__white btn__white_collection">
+                            Открыть магазин
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <section id="importantly" class="importantly">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="title-h2 title-h2__importantly">
+                            Что для нас важно
+                        </h2>
+                    </div>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-sm-6 col-md-4 importantly__list">
+                        <img src="img/quality.png" alt="Качество" class="importantly__icon">
+                        <h3 class="title-h3 title-h3__importantly">
+                            Качество
+                        </h3>
+                        <p class="plain-text plain-text__importantly">
+                            Наши профессионалы работают на лучшем оборудовании для пошива одежды беспрецедентного качества
+                        </p>                        
+                    </div>
+                    <div class="col-sm-6 col-md-4 importantly__list">
+                        <img src="img/speed.png" alt="Скорость" class="importantly__icon">
+                        <h3 class="title-h3 title-h3__importantly">
+                            Скорость
+                        </h3>
+                        <p class="plain-text plain-text__importantly">
+                            Благодаря отлаженной системе в Womazing мы можем отшивать до 20-ти единиц продукции в наших собственных цехах
+                        </p>                        
+                    </div>  
+                    <div class="col-sm-6 col-md-4 importantly__list">
+                        <img src="img/responsibility.png" alt="Ответственность" class="importantly__icon">
+                        <h3 class="title-h3 title-h3__importantly">
+                            Ответственность
+                        </h3>
+                        <p class="plain-text plain-text__importantly">
+                            Мы заботимся о людях и планете. Безотходное производство и комфортные условия труда - все это Womazing
+                        </p>                        
+                    </div>                     
+                </div>
+            </div>
+        </section>
+        <section id="team" class="team">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="title-h2 title-h2__team">
+                            Команда мечты Womazing
+                        </h2>
+                    </div>
+                </div>
+                <div class="row d-flex align-items-center">
+                    <div class="col-12 col-lg-7">
+                        <div id="slideTeamTextIndicators" class="slide-shoow  position-relative">
+                            <div id="arrow-prev" class="arrow position-absolute">
+                                <button type="button" class="bg-color__prev">                                   
+                                </button>
+                            </div>
+                            <div class="image-wrapper">
+                                <div class="img-slide">
+                                    <img src="img/team_1.jpg" alt="Команда" class="img-slide__item ">
+                                </div>
+                                <div class="img-slide d-none">
+                                    <img src="img/team_2.jpg" alt="Команда" class="img-slide__item ">
+                                </div>
+                                <div class="img-slide d-none">
+                                    <img src="img/team_3.jpg" alt="Команда" class="img-slide__item ">
+                                </div>
+                            </div>
+                            <div id="arrow-next" class="arrow position-absolute">
+                                <button type="button" class="bg-color__next">                                   
+                                </button>
+                            </div> 
+                            <div class="slide-point-team d-flex position-absolute">
+                                <button type="button" data-bs-target="#slideTeamTextIndicators" data-bs-slide-to="0" class="point-team active-point_team" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#slideTeamTextIndicators" data-bs-slide-to="1" class="point-team" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#slideTeamTextIndicators" data-bs-slide-to="2" class="point-team" aria-label="Slide 3"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-2 mt-4">
+                        <h3 class="title-h3 title-h3__team">
+                            Для каждой
+                        </h3>
+                        <div class="team-text">
+                            <p class="plain-text plain-text__team">
+                                Каждая девушка уникальна. Однако, мы схожи в миллионе мелочей.
+                            </p>
+                            <p class="plain-text plain-text__team">
+                                Womazing ищет эти мелочи и создает прекрасные вещи, которые выгодно подчеркивают достоинства каждой девушки.
+                            </p> 
+                        </div>                        
+                        <a href="about.html" class="plain-text plain-text__team plain-text__team_brend d-inline-block">
+                            Подробнее о бренде
+                        </a>
+                    </div>
+                </div>
+            </div>            
+        </section>
+    </main>
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-sm-4 col-md-3">
+                    <a href="index.html" class="logo">
+                        <img src="img/Лого.svg" alt="WOMAZING" class="footer-logo">
+                    </a>
+                    <div class="info">
+                        <span class="footer-text copyright">
+                            © Все права защищены
+                        </span>
+                        <!--noindex--> 
+                        <a href="#" class="footer-text politic d-block" target="_blank">
+                            Политика конфиденциальности
+                        </a>
+                        <!--/noindex-->
+                        <!--noindex--> 
+                        <a href="#" class="footer-text public d-block" target="_blank">
+                            Публичная оферта
+                        </a>
+                        <!--/noindex-->
+                    </div>
+                </div>
+                <div class="d-none d-sm-block col-sm-8 col-md-6 col-lg-5">
+                    <nav class="menu">
+                        <ul class="footer-text menu__list d-flex">
+                            <li class="menu__item menu__item_margin">
+                                <a href="#" class="footer-text menu__link">
+                                    Главная
+                                </a>
+                            </li>
+                            <li class="menu__item menu__item_margin">
+                                <a href="#" class="footer-text menu__link">
+                                    Магазин
+                                </a>
+                                <ul class="footer-submenu__list">
+                                    <li class="footer-submenu__item">
+                                        <a href="#" class="footer-submenu__link">
+                                            Пальто
+                                        </a>
+                                    </li>
+                                    <li class="footer-submenu__item">
+                                        <a href="#" class="footer-submenu__link">
+                                            Свитшоты
+                                        </a>
+                                    </li>
+                                    <li class="footer-submenu__item">
+                                        <a href="#" class="footer-submenu__link">
+                                            Кардиганы
+                                        </a>
+                                    </li>
+                                    <li class="footer-submenu__item">
+                                        <a href="#" class="footer-submenu__link">
+                                            Толстовки
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu__item menu__item_margin">
+                                <a href="#" class="footer-text menu__link">
+                                    О бренде
+                                </a>
+                            </li>
+                            <li class="menu__item menu__item_margin">
+                                <a href="#" class="footer-text menu__link">
+                                    Контакты
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-6 col-md-3 offset-md-0 col-lg-2 offset-lg-2 info-company ">
+                    <a href="tel:+74958235412" class="footer-text tel_footer d-md-flex justify-content-end">
+                        +7 (495) 823-54-12
+                    </a>
+                    <a href="mailto:hello@womazing.com" class="footer-text email d-md-flex justify-content-end">
+                        hello@womazing.com
+                    </a>
+                    <div class="social d-flex justify-content-start justify-content-md-end">
+                        <!--noindex--> 
+                        <a href="#" target="_blank">
+                            <img src="img/instagram.png" alt="instagram" class="inst">
+                        </a>
+                        <!--/noindex-->
+                        <!--noindex--> 
+                        <a href="#" target="_blank">
+                            <img src="img/facebook.png" alt="facebook" class="facebook">
+                        </a>
+                        <!--/noindex-->
+                        <!--noindex--> 
+                        <a href="#" target="_blank">
+                            <img src="img/twitter.png" alt="twitter" class="twitter">
+                        </a>
+                        <!--/noindex-->
+                    </div>
+                    <div class="card-bank d-md-flex justify-content-end">
+                        <img src="img/visa-mastercard.png" alt="visa-mastercard" class="card-bank__item"> 
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
